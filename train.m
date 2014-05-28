@@ -37,11 +37,3 @@ n_iterations = 100;
 [all_theta] = one_vs_all(X, y, m, n, num_labels, lambda, n_iterations);
 % and save it for future use
 save("all_theta.mat", "all_theta");
-return
-
-% load previously found theta
-load('all_theta.mat');
-
-pred = predict_one_vs_all(all_theta, X, m, num_labels);
-
-fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y))  *  100);
