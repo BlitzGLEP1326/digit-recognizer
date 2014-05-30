@@ -6,6 +6,7 @@ pixel_width = 28;
 num_labels = 10;          % 10 labels, from 1 to 10   
 					
 % Load Training Data
+%fprintf('Loading data ...\n')
 %data = load("data/small_train.csv");
 data = load("data/train.csv");
 
@@ -26,12 +27,12 @@ n = size(X, 2);
 %rand_indices = randperm(m);
 %sel = X(rand_indices(1:100), :);
 
-%fprintf('Loading and Visualizing Data ...\n')
+%fprintf('Visualizing data ...\n')
 %display_digits(sel);
 
 % parameters for one vs all
 lambda = 0.1;
-n_iterations = 100;
+n_iterations = 50;
 
 % find theta
 [all_theta] = one_vs_all(X, y, m, n, num_labels, lambda, n_iterations);
